@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NumPy Stats</title>
+</head>
+<body>
+    <h1>NumPy Statistics</h1>
+    <form method="POST">
+        <label>Enter numbers (comma separated):</label><br>
+        <input type="text" name="numbers" required><br><br>
+        <input type="submit" value="Calculate">
+    </form>
+
+    {% if result %}
+        {% if result.error %}
+            <p style="color:red;">{{ result.error }}</p>
+        {% else %}
+            <h3>Input Data: {{ result.data }}</h3>
+            <p><strong>Sum:</strong> {{ result.sum }}</p>
+            <p><strong>Mean:</strong> {{ result.mean }}</p>
+            <p><strong>Standard Deviation:</strong> {{ result.std }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
